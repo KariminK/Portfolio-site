@@ -18,6 +18,11 @@ const fetchData = async () => {
     return;
   }
   let activityData = json.data;
+  if (activityData.activities.length === 0) {
+    statusPhoto.src = "./assets/question-sign.png";
+    statusApp.textContent = "Nothing to see there";
+    statusMsgs.forEach((e) => (e.textContent = ""));
+  }
   if (activityData.spotify != null) {
     statusPhoto.src = activityData.spotify.album_art_url;
     statusApp.textContent = "Listening on spotify: ";
