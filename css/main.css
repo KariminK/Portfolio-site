@@ -4,7 +4,7 @@
   --second-accent-color: #ffa559;
   --font-color: #dadada;
   --second-font-color: #b9b9b9;
-  animation: colorAnim 5s infinite alternate-reverse;
+  --accent-color: rgb(123, 255, 0);
 }
 
 * {
@@ -56,6 +56,38 @@ header #profilePicture {
   font-size: 42px;
   margin-bottom: 20px;
   color: var(--font-color);
+}
+
+.whatAmIDoing {
+  margin-top: 20px;
+  background-color: rgba(1, 1, 1, 0.9176470588);
+  color: var(--font-color);
+  padding: 20px;
+}
+.whatAmIDoing h2 {
+  text-align: center;
+}
+.whatAmIDoing img {
+  width: 120px;
+  border: 1px solid white;
+  padding: 2px;
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+}
+.whatAmIDoing .status {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.whatAmIDoing .status p {
+  margin: 10px 0px;
+}
+.whatAmIDoing #statusApp {
+  color: var(--accent-color);
+}
+.whatAmIDoing .statusMsg:nth-child(3) {
+  color: var(--accent-color);
 }
 
 main {
@@ -194,17 +226,6 @@ footer #mail span {
     background-position: 0px;
   }
 }
-@keyframes colorAnim {
-  0% {
-    --accent-color: rgb(255, 96, 0);
-  }
-  50% {
-    --accent-color: rgb(0, 153, 255);
-  }
-  100% {
-    --accent-color: rgb(123, 255, 0);
-  }
-}
 @media screen and (max-width: 1440px) {
   .container {
     max-width: 70vw;
@@ -225,17 +246,40 @@ footer #mail span {
   }
 }
 @media screen and (max-width: 500px) {
+  body {
+    background-position: -800px;
+  }
+  .container {
+    min-width: 100%;
+    margin-top: 10px;
+  }
   header {
-    -webkit-backdrop-filter: none;
-            backdrop-filter: none;
+    font-size: 20px;
+    background-color: rgba(1, 1, 1, 0.9725490196);
+    margin-top: 0px;
+  }
+  .description {
+    width: 100%;
   }
   main {
     grid-template-columns: 1fr;
     grid-template-areas: "header" "project1" "project2" "project3" "project4" "project5" "project6";
   }
+  main h2 {
+    font-size: 28px;
+  }
+  #profilePicture {
+    display: none;
+  }
   .project {
     -webkit-backdrop-filter: none;
             backdrop-filter: none;
+  }
+  .project h3 {
+    font-size: 24px;
+  }
+  .project p {
+    font-size: 20px;
   }
   .project .projectScreenshot {
     height: 200px;

@@ -4,7 +4,7 @@
   --second-accent-color: #ffa559;
   --font-color: #dadada;
   --second-font-color: #b9b9b9;
-  animation: colorAnim 5s infinite alternate-reverse;
+  --accent-color: rgb(123, 255, 0);
 }
 * {
   margin: 0;
@@ -16,7 +16,6 @@ body {
   background-image: url("../assets/background.jpg");
   background-attachment: fixed;
   background-size: cover;
-  //   animation: backgroundAnimation 10s infinite linear alternate-reverse;
 }
 header {
   color: var(--font-color);
@@ -53,7 +52,37 @@ header {
   }
   width: calc(100% - 100px);
 }
-
+.whatAmIDoing {
+  margin-top: 20px;
+  background-color: #010101ea;
+  color: var(--font-color);
+  padding: 20px;
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 120px;
+    border: 1px solid white;
+    padding: 2px;
+    border-radius: 5px;
+    aspect-ratio: 1 / 1;
+  }
+  .status {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    p {
+      margin: 10px 0px;
+    }
+  }
+  #statusApp {
+    color: var(--accent-color);
+  }
+  .statusMsg:nth-child(3) {
+    color: var(--accent-color);
+  }
+}
 main {
   padding: 10px;
   color: var(--font-color);
@@ -181,17 +210,6 @@ footer {
     background-position: 0px;
   }
 }
-@keyframes colorAnim {
-  0% {
-    --accent-color: rgb(255, 96, 0);
-  }
-  50% {
-    --accent-color: rgb(0, 153, 255);
-  }
-  100% {
-    --accent-color: rgb(123, 255, 0);
-  }
-}
 @media screen and (max-width: 1440px) {
   .container {
     max-width: 70vw;
@@ -216,8 +234,20 @@ footer {
   }
 }
 @media screen and (max-width: 500px) {
+  body {
+    background-position: -800px;
+  }
+  .container {
+    min-width: 100%;
+    margin-top: 10px;
+  }
   header {
-    backdrop-filter: none;
+    font-size: 20px;
+    background-color: #010101f8;
+    margin-top: 0px;
+  }
+  .description {
+    width: 100%;
   }
   main {
     grid-template-columns: 1fr;
@@ -229,9 +259,21 @@ footer {
       "project4"
       "project5"
       "project6";
+    h2 {
+      font-size: 28px;
+    }
+  }
+  #profilePicture {
+    display: none;
   }
   .project {
     backdrop-filter: none;
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 20px;
+    }
   }
   .project .projectScreenshot {
     height: 200px;
