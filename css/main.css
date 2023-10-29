@@ -63,6 +63,9 @@ header #profilePicture {
   background-color: rgba(1, 1, 1, 0.9176470588);
   color: var(--font-color);
   padding: 20px;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .whatAmIDoing h2 {
   text-align: center;
@@ -74,9 +77,16 @@ header #profilePicture {
   border-radius: 5px;
   aspect-ratio: 1/1;
 }
+.whatAmIDoing .statuses {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .whatAmIDoing .status {
   margin-top: 10px;
   display: flex;
+  width: 350px;
   justify-content: center;
   gap: 20px;
 }
@@ -112,6 +122,11 @@ main h2 {
   border-radius: 30px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .project {
